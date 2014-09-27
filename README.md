@@ -19,3 +19,8 @@ XMLRPC Control
 --------------
 
 A simple demonstration of adding an XMLRPC endpoint to a flowgraph
+
+Persistent Configuration
+------------------------
+
+This demonstrates how to save runtime variables and reload them at flowgraph start
