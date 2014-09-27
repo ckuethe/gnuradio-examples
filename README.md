@@ -14,3 +14,8 @@ RF Loopback
 -----------
 
 Transmit tone from HackRF, receive on RTL-SDR. Just to make sure the TX and RX path works
+
+XMLRPC Control
+--------------
+
+A simple demonstration of adding an XMLRPC endpoint to a flowgraph
