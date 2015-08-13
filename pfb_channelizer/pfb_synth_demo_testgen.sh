@@ -24,6 +24,12 @@
 # Just run this script and sample .wav files will be placed into $DEST
 DEST="/tmp"
 
+which flite > /dev/null
+if [ $? -ne 0 ] ; then
+	echo This script requires flite. Please install it and try again.
+	exit 1
+fi
+
 CH=0 
 SR=25000
 NAMES="KJFK KMIA KSEA KLAX KDEN PHNL PANC" # same order as in the flowgraph...
@@ -49,7 +55,8 @@ for ICAO in $NAMES ; do
 	TMP=$(mktemp ${DEST}/flite.XXXXXXXXXX)
 	OUTFILE="${DEST}/${CH}_${ICAO}_${VOICE}.wav"
 	echo $OUTFILE
-	printf 'This is channel %d : base-band %s %d kilohertz.\nFake weather report for %s.\n' $CH $SN $FR $ICAO | \
+	ICAO=$(echo $ICAO | sed -re 's/(.)(.)(.)(.)/\1-\2-\3-\4/')
+	printf 'This is channel %d.\nBase band %s %d kilohertz.\nFake weather report for: %s.\n' $CH $SN $FR $ICAO | \
 		flite -voice $VOICE /dev/stdin $TMP
 	mv $TMP $OUTFILE
 	CH=$(( $CH + 1 ))
