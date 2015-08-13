@@ -1,8 +1,9 @@
 Why Polyphase Filters?
 ----------------------
 
-Polyphase filters are super nifty, once you figure them out. One good use is to break a large band into a bunch of channels at the same cost as isolating a single channel. Consider a 10MHz band, with 50kHz channel spacings. A naive filter would require almost 1100 taps to extract a single channel. These same taps can be used in the polyphase channelizer, which would then produce 200 channels... or only 55 taps per channel.
+Polyphase filters are super nifty, once you figure them out. One good use is to break a large band into a bunch of channels at the same cost as isolating a single channel. Consider a 10MHz band, with 50kHz channel spacings. A naive filter would require almost 1100 taps to extract a single channel. These same taps can be used in the polyphase channelizer, which would then produce 200 channels using only 55 taps per channel.
 
+This process works in reverse, too. Rather than upsampling and antialiasing a large number of narrow channels, the synthesizer can efficiently glue a bunch of small channels together into a wider spectrum.
 
 <img src="filter_design.png">
 
