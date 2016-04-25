@@ -8,7 +8,7 @@ Doppler Sonar
 
 A simple continuous wave doppler system using your computer's built-in speaker and microphone.
 
-Eventually this could serve as the basis for learning more about modulated radars
+A basic FMCW sonar implementation has been added; still work in progress.
 
 RF Loopback
 -----------
