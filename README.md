@@ -24,3 +24,11 @@ Persistent Configuration
 ------------------------
 
 This demonstrates how to save runtime variables and reload them at flowgraph start
+
+Audio Waterfall
+---------------
+
+Porting @kpreid 's shinysdr audio waterfall to a grc flowgraph. Also
+demonstrates the use of a signal generator to drive a VCO block to generate
+the tuning control, and a python module block to import and run code more
+or less verbatim from another source - https://github.com/kpreid/shinysdr/
